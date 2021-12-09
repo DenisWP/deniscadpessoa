@@ -16,7 +16,7 @@
     }
 
     type ContextType = {
-        state: State,
+        state: State;
         dispach: (action: Action) => void
     }
 
@@ -63,15 +63,13 @@
 
     //Provider componente principal da aplicacao.
     const FormProvider = ({children}: FormProviderProps) => {
-        const [state, dispatch] = useReducer(formReducer, initialData);
-        const value = {state, dispatch};
-
+        const [state, dispach] = useReducer(formReducer, initialData);
+        const value = { state, dispach };
         return (
           <FormContext.Provider value = {value}>
               {children}
           </FormContext.Provider>
         );
-
     }
 
     //Criando o hook
