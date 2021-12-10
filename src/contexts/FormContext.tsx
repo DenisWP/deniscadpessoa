@@ -3,11 +3,6 @@
     import {createContext, ReactNode, useContext, useReducer} from 'react';
 
     type State = {
-        /*
-        name: string;
-        level: 0 | 1;
-        email: string;
-        github: string*/
         currentStep: number;
         name: string;
         age: number;
@@ -32,12 +27,6 @@
     const FormContext = createContext <ContextType | undefined>(undefined);
 
     const initialData: State = {
-        /*
-        name: '',
-        level: 0,
-        email: '',
-        github: ''*/
-
         currentStep: 0,
         name: '',
         age: 0,
@@ -47,11 +36,6 @@
 
     // Criando o Reducer
     export enum FormActions {
-        /*
-        setName,
-        setLevel,
-        setEmail,
-        setGithub*/
         setCurrentStep,
         setName,
         setAge,
