@@ -3,11 +3,15 @@
     import {createContext, ReactNode, useContext, useReducer} from 'react';
 
     type State = {
-        currentStep: number;
+        /*
         name: string;
         level: 0 | 1;
         email: string;
-        github: string
+        github: string*/
+        currentStep: number;
+        name: string;
+        age: number;
+        cpf: string
     }
 
     type Action = {
@@ -28,20 +32,30 @@
     const FormContext = createContext <ContextType | undefined>(undefined);
 
     const initialData: State = {
-        currentStep: 0,
+        /*
         name: '',
         level: 0,
         email: '',
-        github: ''
+        github: ''*/
+
+        currentStep: 0,
+        name: '',
+        age: 0,
+        cpf: ''
+
     }
 
     // Criando o Reducer
     export enum FormActions {
-        setCurrentStep,
+        /*
         setName,
         setLevel,
         setEmail,
-        setGithub
+        setGithub*/
+        setCurrentStep,
+        setName,
+        setAge,
+        setCpf
     }
 
     const formReducer = (state: State, action: Action) => {
@@ -50,12 +64,10 @@
                 return{...state, currentStep: action.payload}
             case FormActions.setName:
                 return {...state, name: action.payload}
-            case FormActions.setLevel:
-                return {...state, level: action.payload}
-            case FormActions.setEmail:
-                return {...state, email: action.payload}
-            case FormActions.setGithub:
-                return {...state, github: action.payload}
+            case FormActions.setAge:
+                return {...state, age: action.payload}
+            case FormActions.setCpf:
+                return {...state, cpf: action.payload}
             default:
                 return state;
         }

@@ -4,7 +4,7 @@ export const Header = () => {
     return (
         <C.Container>
             <h1>Cadastro de Pessoa</h1>
-            <p>Cadastre a pessoa: </p>
+            <p>Criado com intuito de aprendizado </p>
         </C.Container>
     );
 }
