@@ -36,14 +36,14 @@
     }
 
     // Criando o Reducer
-    enum FormActions {
+    export enum FormActions {
         setCurrentStep,
         setName,
         setLevel,
         setEmail,
         setGithub
-
     }
+
     const formReducer = (state: State, action: Action) => {
         switch (action.type){
             case FormActions.setCurrentStep:
@@ -62,7 +62,7 @@
     }
 
     //Provider componente principal da aplicacao.
-    const FormProvider = ({children}: FormProviderProps) => {
+    export const FormProvider = ({children}: FormProviderProps) => {
         const [state, dispach] = useReducer(formReducer, initialData);
         const value = { state, dispach };
         return (
@@ -73,8 +73,7 @@
     }
 
     //Criando o hook
-
-    const useForm = () => {
+    export const useForm = () => {
         const context = useContext(FormContext)
         if(context === undefined){
             throw new Error('useForm precisa ser usado dentro do Provider')
