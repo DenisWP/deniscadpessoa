@@ -25,7 +25,7 @@ export const Container = styled.div`
             margin-top: 7px;
             box-sizing: border-box;
             width: 100%;
-            padding: 30px 10px;
+            padding: 20px 10px;
             border: 2px solid #25CD89;
             border-radius: 10px;
             outline: 0;
