@@ -1,11 +1,10 @@
-import {useNavigate, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import * as C from './styles';
 import {FormActions, useForm} from '../../contexts/FormContext';
 import {Theme} from "../../components/Theme";
 import {ChangeEvent, useEffect} from 'react';
 
 export const FormStep3 = () => {
-    const navigate = useNavigate();
     const {state, dispach} = useForm();
 
     const handleCpfChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +24,22 @@ export const FormStep3 = () => {
     const handleNextStep = () => {
         if(state.cpf !== ''){
             //Enviar para a API da Natalí
+            fetch('https://virtserver.swaggerhub.com/estudos6/CRUD/1.0.4/', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    "id": 200,
+                    "name": state.name,
+                    "age": state.age,
+                    "cpf": state.cpf
+                })
+            })
             console.log(state);
+        }else{
+            alert("Por favor, preencha o CPF");
         }
     }
 
