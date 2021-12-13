@@ -1,11 +1,11 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import * as C from './styles';
 import {Theme} from "../../components/Theme";
 
 export const FormStep1 = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
     const handleNextStep = () => {
-        history.push('/step2');
+        navigate('/step2');
     }
 
     return (
